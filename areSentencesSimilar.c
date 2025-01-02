@@ -1,3 +1,6 @@
+#include <stdbool.h>
+#include <stdio.h>
+
 bool areSentencesSimilar(char* sentence1, char* sentence2) {
     if( strcmp ( sentence1 , sentence2 ) == 0 )
         return true;

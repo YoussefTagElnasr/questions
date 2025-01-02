@@ -5,7 +5,7 @@ int reverse(int x)
 {
     int number = x;
     int remainder;
-    int reversed = 0;
+    long reversed = 0;
 
     while (number != 0)
     {
@@ -14,18 +14,8 @@ int reverse(int x)
         number /= 10;
     }
 
-    if(reversed <  )
-
-    if(number < 0)
-       return reversed = reversed * -1;
+    if(reversed < pow(-2 , 31) || reversed > __INT_MAX__ )
+        return 0;
     else
         return reversed;   
-}
-
-int main (void)
-{
-    int number = 321;
-
-    int reversed = reverse(number);
-    printf("%d" , reversed);
 }
