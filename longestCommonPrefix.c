@@ -1,8 +1,12 @@
 char* longestCommonPrefix(char** strs, int strsSize)
-{
+{ 
+    if (strsSize == 0)
+    {
+        return strdup("");
+    }
     // make the first word our refrence
     char* refrence = strs[0];
-    char* ret = malloc(200 * sizeof(char));
+    char* ret = (char*)malloc(201);
     int lastIndex = 0;
     int flag = 0;
     int i = 0;
@@ -12,26 +16,20 @@ char* longestCommonPrefix(char** strs, int strsSize)
     {
         while( j < strsSize)
         {
-            // if the first char doesnt match return emptya array
-            if(strs[j][i] != refrence[i] && i == 0)
+            // if the chars doesnt match close the array and return it 
+            if (strs[j][i] != refrence[i] || strs[i][j] == '\0' )
             {
-                strdup("");
-            }
-            else if (strs[j][i] != refrence[i])
-            {
-                flag = 1;
-                break;
+                ret[lastIndex] = '\0';
+                return ret;
             }
             // if the char matches the char from the refrence move to the next string
-            if(strs[j][i] == refrence[i])
+            else if(strs[j][i] == refrence[i])
             {
                 j++;
             }
+            // if the inner loop breaks then break this one 2
         }
-        if(flag)
-        {
-            break;
-        }
+        // if the loop completes begin the begain the search of the second char
         if( j == strsSize)
         {
             ret[lastIndex] = refrence[i];

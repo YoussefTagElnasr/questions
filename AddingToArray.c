@@ -54,7 +54,6 @@ int addedInteger(int* nums1, int nums1Size, int* nums2, int nums2Size) {
 
     if ( BigNumbers == nums1)
     {
-        x = x * -1;
     }
 
     return x;
