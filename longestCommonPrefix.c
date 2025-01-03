@@ -2,6 +2,7 @@
 #include <stdlib.h>
 
 char* longestCommonPrefix(char** strs, int strsSize)
+<<<<<<< HEAD
 { 
     // make the first word our refrence
     char* refrence = strs[0];
@@ -9,12 +10,23 @@ char* longestCommonPrefix(char** strs, int strsSize)
     int lastIndex = 0;
     int flag = 0;
     int i = 0;
+=======
+{
+>>>>>>> 7a1b17c3ae28c4c64c93a7f31b99870e03a0fc21
     int j = 0;
+    
+    if (strsSize == 0 || strlen(strs[0]) == 0)
+        return strdup("");
 
-    while (refrence[i] != '\0')
+    // Reference the first string for comparison
+    char* reference = strs[0];
+    int i = 0;
+
+    while (reference[i] != '\0') 
     {
-        while( j < strsSize)
+        while ( j < strsSize)
         {
+<<<<<<< HEAD
             // if the chars doesnt match close the array and return it 
             if (strs[j][i] != refrence[i] || strs[i][j] == '\0' )
             {
@@ -47,3 +59,18 @@ int main()
     char* s = longestCommonPrefix(test , 2);
     printf("%c", s[0]);
 }
+=======
+            if (strs[j][i] != reference[i] || strs[j][i] == '\0') {
+                // Terminate the prefix at this point
+                reference[i] = '\0';
+                return reference;
+            }
+            j++;
+        }
+         j = 0;
+         i++;   
+    }
+    return reference;    
+}
+
+>>>>>>> 7a1b17c3ae28c4c64c93a7f31b99870e03a0fc21
