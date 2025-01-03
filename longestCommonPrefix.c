@@ -1,9 +1,8 @@
+#include <stdio.h>
+#include <stdlib.h>
+
 char* longestCommonPrefix(char** strs, int strsSize)
 { 
-    if (strsSize == 0)
-    {
-        return strdup("");
-    }
     // make the first word our refrence
     char* refrence = strs[0];
     char* ret = (char*)malloc(201);
@@ -39,4 +38,12 @@ char* longestCommonPrefix(char** strs, int strsSize)
         }      
     }
         return ret;
+}
+
+
+int main()
+{
+    char* test[] = {"wavojwpzoyihecxgkhtzjhhlcyhesehzmbqjdgbtuexvfojjpeeywncfcyiuxisroaouhfmtqcbypsltyvqxxwvrlfecwaliotzvvmbqudoqbnhvzzoqguteq","wavnuvqjwvbvhdzumdychscrqnkdpqtopiwnvieqieuxrnbnhmrohuivseiwbrgevwazhovhbeptmcq"};
+    char* s = longestCommonPrefix(test , 2);
+    printf("%c", s[0]);
 }
