@@ -22,7 +22,8 @@ class Solution:
         return str(arr[0])
 
 
-arr = ["00","01"]
+arr = ["01","10"]
 print(Solution().findDifferentBinaryString(arr))
+
 
 
